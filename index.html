@@ -183,19 +183,19 @@
         </div>
         
         <label><input type="checkbox" value="Rider didn't answer">
-            <i class="icon fas fa-phone-slash"></i> Rider didn't answer
+        <i class="icon fas fa-phone-slash"></i> Rider didn't answer
         </label><br>
         <label><input type="checkbox" value="Call CST One Time">
-            <i class="icon fas fa-check-square"></i> Call CST One Time
+        <i class="icon fas fa-phone-volume"></i> Call CST One Time
         </label><br>
-        <label><input type="checkbox" value="Cst Answer and inform him / OR Cst No Answer. ">
-            <i class="icon fas fa-credit-card"></i> Cst Answer and inform him / OR Cst No Answer.  
+        <label><input type="checkbox" value="Cst Answer and inform him">
+        <i class="icon fas fa-headset"></i> Cst Answer and inform him
         </label><br>
-        <label><input type="checkbox" value="Follow SOP">
-            <i class="icon fas fa-comments"></i> Follow SOP
+        <label><input type="checkbox" value="CST No Answer">
+            <i class="icon fas fa-phone-slash"></i> CST No Answer
         </label><br>
         <label><input type="checkbox" value="Result / Cancel Order Full Refund to the Original Payment Method and Compensate 50 QAR to wallet">
-            <i class="icon fas fa-phone-alt"></i> Result / Cancel Order Full Refund to the Original Payment Method and Compensate 50 QAR to wallet
+            <i class="icon fas fa-check-circle"></i> Result / Cancel Order Full Refund to the Original Payment Method and Compensate 50 QAR to wallet
         </label><br>
 
         <button onclick="generateScript()">Generate Script</button>
@@ -265,12 +265,12 @@ if (document.querySelector('input[value="Checked Previous Rider Report 2"]').che
                 script += "Call CST One Time\n";
             }
 
-            if (document.querySelector('input[value="Cst Answer and inform him / OR Cst No Answer. "]').checked) {
-                script += "Cst Answer and inform him / OR Cst No Answer. \n";
-            }
+if (document.querySelector('input[value="Cst Answer and inform him"]').checked) {
+    script += "Cst Answer and inform him\n";
+}
 
-            if (document.querySelector('input[value="Follow SOP"]').checked) {
-                script += "Follow SOP\n";
+            if (document.querySelector('input[value="CST No Answer"]').checked) {
+                script += "CST No Answer\n";
             }
 
             if (document.querySelector('input[value="Result / Cancel Order Full Refund to the Original Payment Method and Compensate 50 QAR to wallet"]').checked) {
@@ -318,5 +318,4 @@ if (document.querySelector('input[value="Checked Previous Rider Report 2"]').che
     <p>&copy; All Rights Reserved By Mohamed Hassan (Mido)</p>
   </section>
 </body>
-
 </html>
