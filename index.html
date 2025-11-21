@@ -3,41 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OSLO</title>
-    <!-- إضافة مكتبة Font Awesome -->
+    <title>Script Generator</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- إضافة خط مميز من Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body { 
-            font-family: 'Poppins', sans-serif; /* تغيير نوع الخط إلى Poppins */
+            font-family: 'Poppins', sans-serif;
             margin: 0; 
             padding: 0; 
             background: linear-gradient(to right, #74ebd5, #ACB6E5); 
             color: #333; 
-            line-height: 1.6; /* زيادة التباعد بين الأسطر لتحسين القراءة */
+            line-height: 1.6;
         }
         .container { 
             max-width: 600px; 
             margin: 50px auto; 
             padding: 20px; 
-            background-color: #ffffffcc; /* نصف شفاف ليعطي تأثير النعومة */
+            background-color: #ffffffcc;
             border-radius: 8px; 
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         h2 {
             text-align: center;
             color: #4CAF50;
-            font-weight: 600; /* زيادة وزن الخط لجعل العنوان بارزًا */
-            font-size: 2rem; /* تحسين حجم العنوان */
-            letter-spacing: 1px; /* إضافة تباعد بين الحروف */
+            font-weight: 600;
+            font-size: 2rem;
+            letter-spacing: 1px;
         }
         label { 
             display: block; 
             margin-bottom: 12px; 
-            font-size: 18px; /* زيادة حجم الخط */
+            font-size: 18px;
             color: #444;
-            font-weight: 400; /* وزن الخط العادي */
+            font-weight: 400;
         }
         .icon { 
             margin-right: 10px; 
@@ -46,13 +44,13 @@
         button {
             background-color: #4CAF50; 
             color: white; 
-            padding: 12px 25px; /* زيادة حجم الأزرار */
+            padding: 12px 25px;
             border: none; 
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
             font-size: 16px;
-            font-weight: 600; /* جعل النص داخل الأزرار أكثر بروزًا */
+            font-weight: 600;
         }
         button:hover {
             background-color: #45a049;
@@ -63,11 +61,11 @@
             margin-top: 10px; 
             padding: 12px;
             font-size: 16px;
-            font-family: 'Poppins', sans-serif; /* استخدام نفس الخط داخل الـ textarea */
+            font-family: 'Poppins', sans-serif;
             border-radius: 5px;
             border: 1px solid #ccc;
             background-color: #f9f9f9;
-            line-height: 1.5; /* تحسين تباعد الأسطر داخل الـ textarea */
+            line-height: 1.5;
         }
         .sub-options { 
             margin-left: 20px; 
@@ -76,27 +74,27 @@
         .sub-options label {
             margin-left: 20px;
             font-size: 16px;
-            font-weight: 400; /* تحسين الوزن داخل الخيارات الفرعية */
+            font-weight: 400;
         }
         .reset-button {
-            background-color: #FF5722; /* اللون البرتقالي لإعادة التعيين */
+            background-color: #FF5722;
             margin-top: 10px;
         }
         .reset-button:hover {
             background-color: #e64a19;
         }
         .active-green { 
-            color: #4CAF50; /* تلوين النص باللون الأخضر */
+            color: #4CAF50;
         }
         .active-red { 
-            color: #e74c3c; /* تلوين النص باللون الأحمر */
+            color: #e74c3c;
         }
-                .footer_section {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 14px;
-      color: #555;
-    }
+        .footer_section {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
 
     </style>
 </head>
@@ -141,25 +139,25 @@
                 <i class="icon fas fa-exclamation-circle"></i> NO Report</label><br>
         </div>
         <label>
-    <input type="checkbox" value="Checked Previous Rider Report 2" onclick="toggleSubOptions('PreviousRiderOptions2', this)">
-    <i class="icon fas fa-user"></i> Checked Previous Rider Report 
-</label><br>
-<div id="PreviousRiderOptions2" class="sub-options">
-    <label><input type="radio" name="PreviousRider2" value="Long Preparation Time">
-        <i class="icon fas fa-clock"></i> Long Preparation Time</label><br>
-    <label><input type="radio" name="PreviousRider2" value="Unable to contact the customer">
-        <i class="icon fas fa-phone-alt"></i> Unable to contact the customer</label><br>
-    <label><input type="radio" name="PreviousRider2" value="Customer Wrong Pin">
-        <i class="icon fas fa-map-marker-alt"></i> Customer Wrong Pin</label><br>
-    <label><input type="radio" name="PreviousRider2" value="Wrong Merchant Address">
-        <i class="icon fas fa-map-signs"></i> Wrong Merchant Address</label><br>
-    <label><input type="radio" name="PreviousRider2" value="Traffic Jam">
-        <i class="icon fas fa-car-crash"></i> Traffic Jam</label><br>
-    <label><input type="radio" name="PreviousRider2" value="Merchant Close">
-        <i class="icon fas fa-store"></i> Merchant Close</label><br>
-    <label><input type="radio" name="PreviousRider2" value="NO Report">
-        <i class="icon fas fa-exclamation-circle"></i> NO Report</label><br>
-</div>
+            <input type="checkbox" value="Checked Previous Rider Report 2" onclick="toggleSubOptions('PreviousRiderOptions2', this)">
+            <i class="icon fas fa-user"></i> Checked Previous Rider Report 
+        </label><br>
+        <div id="PreviousRiderOptions2" class="sub-options">
+            <label><input type="radio" name="PreviousRider2" value="Long Preparation Time">
+                <i class="icon fas fa-clock"></i> Long Preparation Time</label><br>
+            <label><input type="radio" name="PreviousRider2" value="Unable to contact the customer">
+                <i class="icon fas fa-phone-alt"></i> Unable to contact the customer</label><br>
+            <label><input type="radio" name="PreviousRider2" value="Customer Wrong Pin">
+                <i class="icon fas fa-map-marker-alt"></i> Customer Wrong Pin</label><br>
+            <label><input type="radio" name="PreviousRider2" value="Wrong Merchant Address">
+                <i class="icon fas fa-map-signs"></i> Wrong Merchant Address</label><br>
+            <label><input type="radio" name="PreviousRider2" value="Traffic Jam">
+                <i class="icon fas fa-car-crash"></i> Traffic Jam</label><br>
+            <label><input type="radio" name="PreviousRider2" value="Merchant Close">
+                <i class="icon fas fa-store"></i> Merchant Close</label><br>
+            <label><input type="radio" name="PreviousRider2" value="NO Report">
+                <i class="icon fas fa-exclamation-circle"></i> NO Report</label><br>
+        </div>
         
         <label>
             <input type="checkbox" value="Called Current Rider On">
@@ -185,11 +183,14 @@
         <label><input type="checkbox" value="Rider didn't answer">
         <i class="icon fas fa-phone-slash"></i> Rider didn't answer
         </label><br>
+        <label><input type="checkbox" value="Merchant didn't answer">
+        <i class="icon fas fa-phone-slash"></i> Merchant didn't answer
+        </label><br>
         <label><input type="checkbox" value="Call CST One Time">
         <i class="icon fas fa-phone-volume"></i> Call CST One Time
         </label><br>
-        <label><input type="checkbox" value="Cst Answer and inform him">
-        <i class="icon fas fa-headset"></i> Cst Answer and inform him
+        <label><input type="checkbox" value="CST Answer and inform him">
+        <i class="icon fas fa-headset"></i> CST Answer and inform him
         </label><br>
         <label><input type="checkbox" value="CST No Answer">
             <i class="icon fas fa-phone-slash"></i> CST No Answer
@@ -200,8 +201,7 @@
 
         <button onclick="generateScript()">Generate Script</button>
         <button class="reset-button" onclick="resetSelections()">Reset</button>
-        <textarea id="output"></textarea> <!-- تم إزالة الـ readonly لتمكين الكتابة -->
-        <button onclick="copyToClipboard()">Copy Script</button>
+        <textarea id="output"></textarea> <button onclick="copyToClipboard()">Copy Script</button>
     </div>
     
     <script>
@@ -226,27 +226,24 @@
                 if (currentRider) {
                     script += "Checked Current Rider Report: " + currentRider.value + "\n";
                 }
-                if (document.querySelector('input[value="Checked Previous Rider Report 2"]').checked) {
-    let previousRider2 = document.querySelector('input[name="PreviousRider2"]:checked');
-    if (previousRider2) {
-        script += "Checked Previous Rider Report : " + previousRider2.value + "\n";
-    }
-}
-
             }
 
-if (document.querySelector('input[value="Checked Previous Rider Report 2"]').checked) {
-    let previousRider = document.querySelector('input[name="PreviousRider"]:checked');
-    if (previousRider) {
-        script += "Checked Previous Rider Report: " + previousRider.value + "\n";
-    }
-}
+            // هذا هو الجزء الصحيح والوحيد المطلوب لـ "Checked Previous Rider Report"
+            if (document.querySelector('input[value="Checked Previous Rider Report 2"]').checked) {
+                let previousRider2 = document.querySelector('input[name="PreviousRider2"]:checked');
+                if (previousRider2) {
+                    // تم تعديل النص ليصبح أكثر وضوحاً
+                    script += "Checked Previous Rider Report: " + previousRider2.value + "\n"; 
+                }
+            }
+            
+            // **تم حذف الكود المكرر والغير صحيح هنا**
 
             if (document.querySelector('input[value="Called Current Rider On"]').checked) {
                 script += "Called Current Rider On\n";
             }
 
-                        if (document.querySelector('input[value="Called Merchant On"]').checked) {
+            if (document.querySelector('input[value="Called Merchant On"]').checked) {
                 script += "Called Merchant On\n";
             }
 
@@ -261,13 +258,17 @@ if (document.querySelector('input[value="Checked Previous Rider Report 2"]').che
                 script += "Rider didn't answer\n";
             }
 
+            if (document.querySelector('input[value="Merchant didn\'t answer"]').checked) { 
+                script += "Merchant didn't answer\n";
+            }
+
             if (document.querySelector('input[value="Call CST One Time"]').checked) {
                 script += "Call CST One Time\n";
             }
 
-if (document.querySelector('input[value="Cst Answer and inform him"]').checked) {
-    script += "Cst Answer and inform him\n";
-}
+            if (document.querySelector('input[value="CST Answer and inform him"]').checked) {
+                script += "CST Answer and inform him\n";
+            }
 
             if (document.querySelector('input[value="CST No Answer"]').checked) {
                 script += "CST No Answer\n";
@@ -288,33 +289,26 @@ if (document.querySelector('input[value="Cst Answer and inform him"]').checked) 
         }
 
         function resetSelections() {
-            document.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach(input => {
-                input.checked = false;
+            // إلغاء تحديد كل الـ checkboxes
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = false;
             });
+
+            // إلغاء تحديد كل الـ radio buttons
+            document.querySelectorAll('input[type="radio"]').forEach(radio => {
+                radio.checked = false;
+            });
+
+            // إخفاء كل الأقسام الفرعية
+            document.querySelectorAll('.sub-options').forEach(subOptions => {
+                subOptions.style.display = 'none';
+            });
+
+            // مسح محتوى الـ textarea
             document.getElementById("output").value = "";
         }
-        function resetSelections() {
-    // إلغاء تحديد كل الـ checkboxes
-    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-        checkbox.checked = false;
-    });
-
-    // إلغاء تحديد كل الـ radio buttons
-    document.querySelectorAll('input[type="radio"]').forEach(radio => {
-        radio.checked = false;
-    });
-
-    // إخفاء كل الأقسام الفرعية
-    document.querySelectorAll('.sub-options').forEach(subOptions => {
-        subOptions.style.display = 'none';
-    });
-
-    // مسح محتوى الـ textarea
-    document.getElementById("output").value = "";
-}
     </script>
-<!-- Footer Section -->
-  <section class="container-fluid footer_section">
+<section class="container-fluid footer_section">
     <p>&copy; All Rights Reserved By Mohamed Hassan (Mido)</p>
   </section>
 </body>
