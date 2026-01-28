@@ -196,7 +196,7 @@
             <i class="icon fas fa-phone-slash"></i> CST No Answer
         </label><br>
         <label><input type="checkbox" value="Result / Cancel Order Full Refund to the Original Payment Method and Compensate 50 QAR to wallet">
-            <i class="icon fas fa-check-circle"></i> Result / Cancel Order Full Refund to the Original Payment Method and Compensate 50 QAR to wallet
+            <i class="icon fas fa-check-circle"></i> Result / Cancel Order Full Refund to Keeta Wallet and Compensate 50 QAR to wallet
         </label><br>
 
         <button onclick="generateScript()">Generate Script</button>
@@ -274,8 +274,8 @@
                 script += "CST No Answer\n";
             }
 
-            if (document.querySelector('input[value="Result / Cancel Order Full Refund to the Original Payment Method and Compensate 50 QAR to wallet"]').checked) {
-                script += "Result / Cancel Order Full Refund to the Original Payment Method and Compensate 50 QAR to wallet\n";
+            if (document.querySelector('input[value="Result / Cancel Order Full Refund to Keeta Wallet and Compensate 50 QAR to wallet"]').checked) {
+                script += "Result / Cancel Order Full Refund to Keeta Wallet and Compensate 50 QAR to wallet\n";
             }
 
             output.value = script;
@@ -313,4 +313,5 @@
   </section>
 </body>
 </html>
+
 
