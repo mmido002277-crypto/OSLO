@@ -180,14 +180,31 @@
                 <i class="icon fas fa-ban"></i> Rider Answer said He Can't Deliver the Order Because</label><br>
         </div>
         
+        <label>
+    <input type="checkbox" value="Merchant Answer" onclick="toggleSubOptions('merchantAnswerOptions', this)">
+    <i class="icon fas fa-headset"></i> Merchant Answer
+</label><br>
+
+<div id="merchantAnswerOptions" class="sub-options" style="display: none; margin-left: 20px;">
+    <label>
+        <input type="radio" name="merchantAnswer" value="Merchant Answer said He Will Deliver in X minutes">
+        <i class="icon fas fa-clock"></i> Merchant Answer said He Will prepare the order in X minutes
+    </label><br>
+    
+    <label>
+        <input type="radio" name="merchantAnswer" value="Merchant Answer said He Can't prepare the Order ">
+        <i class="icon fas fa-times-circle"></i> Merchant Answer said He Can't prepare the Order
+    </label>
+</div>
+
         <label><input type="checkbox" value="Rider didn't answer">
         <i class="icon fas fa-phone-slash"></i> Rider didn't answer
         </label><br>
         <label><input type="checkbox" value="Merchant didn't answer">
         <i class="icon fas fa-phone-slash"></i> Merchant didn't answer
         </label><br>
-        <label><input type="checkbox" value="Call CST One Time">
-        <i class="icon fas fa-phone-volume"></i> Call CST One Time
+        <label><input type="checkbox" value="Call CST on /  , to inform current situation">
+        <i class="icon fas fa-phone-volume"></i> Call CST on /  , to inform current situation
         </label><br>
         <label><input type="checkbox" value="CST Answer and inform him">
         <i class="icon fas fa-headset"></i> CST Answer and inform him
@@ -237,8 +254,7 @@
                 }
             }
             
-            // **تم حذف الكود المكرر والغير صحيح هنا**
-
+          
             if (document.querySelector('input[value="Called Current Rider On"]').checked) {
                 script += "Called Current Rider On\n";
             }
@@ -254,6 +270,13 @@
                 }
             }
 
+            if (document.querySelector('input[value="Merchant Answer"]').checked) {
+            let merchantAnswer = document.querySelector('input[name="merchantAnswer"]:checked');
+            if (merchantAnswer) {
+            script += merchantAnswer.value + "\n";
+                }
+           }
+
             if (document.querySelector('input[value="Rider didn\'t answer"]').checked) {
                 script += "Rider didn't answer\n";
             }
@@ -262,8 +285,8 @@
                 script += "Merchant didn't answer\n";
             }
 
-            if (document.querySelector('input[value="Call CST One Time"]').checked) {
-                script += "Call CST One Time\n";
+            if (document.querySelector('input[value="Call CST on /  , to inform current situation"]').checked) {
+                script += "Call CST on /  , to inform current situation\n";
             }
 
             if (document.querySelector('input[value="CST Answer and inform him"]').checked) {
@@ -313,6 +336,5 @@
   </section>
 </body>
 </html>
-
 
 
