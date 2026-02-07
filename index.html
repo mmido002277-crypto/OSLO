@@ -138,6 +138,7 @@
             <label><input type="radio" name="currentRider" value="NO Report">
                 <i class="icon fas fa-exclamation-circle"></i> NO Report</label><br>
         </div>
+
         <label>
             <input type="checkbox" value="Checked Previous Rider Report 2" onclick="toggleSubOptions('PreviousRiderOptions2', this)">
             <i class="icon fas fa-user"></i> Checked Previous Rider Report 
@@ -181,40 +182,42 @@
         </div>
         
         <label>
-    <input type="checkbox" value="Merchant Answer" onclick="toggleSubOptions('merchantAnswerOptions', this)">
-    <i class="icon fas fa-headset"></i> Merchant Answer
-</label><br>
-
-<div id="merchantAnswerOptions" class="sub-options" style="display: none; margin-left: 20px;">
-    <label>
-        <input type="radio" name="merchantAnswer" value="Merchant Answer said He Will Deliver in X minutes">
-        <i class="icon fas fa-clock"></i> Merchant Answer said He Will prepare the order in X minutes
-    </label><br>
-    
-    <label>
-        <input type="radio" name="merchantAnswer" value="Merchant Answer said He Can't prepare the Order ">
-        <i class="icon fas fa-times-circle"></i> Merchant Answer said He Can't prepare the Order
-    </label>
-</div>
+            <input type="checkbox" value="Merchant Answer" onclick="toggleSubOptions('merchantAnswerOptions', this)">
+            <i class="icon fas fa-headset"></i> Merchant Answer
+        </label><br>
+        <div id="merchantAnswerOptions" class="sub-options">
+            <label><input type="radio" name="merchantAnswer" value="Merchant Answer said He Will prepare the order in X minutes">
+                <i class="icon fas fa-clock"></i> Merchant Answer said He Will prepare the order in X minutes</label><br>
+            <label><input type="radio" name="merchantAnswer" value="Merchant Answer said He Can't prepare the Order">
+                <i class="icon fas fa-times-circle"></i> Merchant Answer said He Can't prepare the Order</label><br>
+        </div>
 
         <label><input type="checkbox" value="Rider didn't answer">
-        <i class="icon fas fa-phone-slash"></i> Rider didn't answer
+            <i class="icon fas fa-phone-slash"></i> Rider didn't answer
         </label><br>
         <label><input type="checkbox" value="Merchant didn't answer">
-        <i class="icon fas fa-phone-slash"></i> Merchant didn't answer
+            <i class="icon fas fa-phone-slash"></i> Merchant didn't answer
         </label><br>
         <label><input type="checkbox" value="Call CST on /  , to inform current situation">
-        <i class="icon fas fa-phone-volume"></i> Call CST on /  , to inform current situation
+            <i class="icon fas fa-phone-volume"></i> Call CST on /  , to inform current situation
         </label><br>
         <label><input type="checkbox" value="CST Answer and inform him">
-        <i class="icon fas fa-headset"></i> CST Answer and inform him
+            <i class="icon fas fa-headset"></i> CST Answer and inform him
         </label><br>
         <label><input type="checkbox" value="CST No Answer">
             <i class="icon fas fa-phone-slash"></i> CST No Answer
         </label><br>
-        <label><input type="checkbox" value="Result / Cancel Order Full Refund to Keeta Wallet and Compensate 50 QAR to wallet">
-            <i class="icon fas fa-check-circle"></i> Result / Cancel Order Full Refund to Keeta Wallet and Compensate 50 QAR to wallet
+
+        <label>
+            <input type="checkbox" value="Result" onclick="toggleSubOptions('resultOptions', this)">
+            <i class="icon fas fa-check-circle"></i> Result
         </label><br>
+        <div id="resultOptions" class="sub-options">
+            <label><input type="radio" name="resultOption" value="Result / Cancel Order Full Refund to Keeta Wallet and Compensate 50 QAR to wallet">
+                <i class="icon fas fa-hand-holding-usd"></i> Cancel & Refund 50 QAR</label><br>
+            <label><input type="radio" name="resultOption" value="Result / no action taken , close case .">
+                <i class="icon fas fa-times-circle"></i> No action taken, close case</label><br>
+        </div>
 
         <button onclick="generateScript()">Generate Script</button>
         <button class="reset-button" onclick="resetSelections()">Reset</button>
@@ -233,72 +236,42 @@
 
             if (document.querySelector('input[value="Checked Order status"]').checked) {
                 let orderStatus = document.querySelector('input[name="orderStatus"]:checked');
-                if (orderStatus) {
-                    script += "Checked Order status: " + orderStatus.value + "\n";
-                }
+                if (orderStatus) script += "Checked Order status: " + orderStatus.value + "\n";
             }
 
             if (document.querySelector('input[value="Checked Current Rider Report"]').checked) {
                 let currentRider = document.querySelector('input[name="currentRider"]:checked');
-                if (currentRider) {
-                    script += "Checked Current Rider Report: " + currentRider.value + "\n";
-                }
+                if (currentRider) script += "Checked Current Rider Report: " + currentRider.value + "\n";
             }
 
-            // هذا هو الجزء الصحيح والوحيد المطلوب لـ "Checked Previous Rider Report"
             if (document.querySelector('input[value="Checked Previous Rider Report 2"]').checked) {
                 let previousRider2 = document.querySelector('input[name="PreviousRider2"]:checked');
-                if (previousRider2) {
-                    // تم تعديل النص ليصبح أكثر وضوحاً
-                    script += "Checked Previous Rider Report: " + previousRider2.value + "\n"; 
-                }
+                if (previousRider2) script += "Checked Previous Rider Report: " + previousRider2.value + "\n"; 
             }
             
-          
-            if (document.querySelector('input[value="Called Current Rider On"]').checked) {
-                script += "Called Current Rider On\n";
-            }
-
-            if (document.querySelector('input[value="Called Merchant On"]').checked) {
-                script += "Called Merchant On\n";
-            }
+            if (document.querySelector('input[value="Called Current Rider On"]').checked) script += "Called Current Rider On\n";
+            if (document.querySelector('input[value="Called Merchant On"]').checked) script += "Called Merchant On\n";
 
             if (document.querySelector('input[value="Rider Answer"]').checked) {
                 let riderAnswer = document.querySelector('input[name="riderAnswer"]:checked');
-                if (riderAnswer) {
-                    script += riderAnswer.value + "\n";
-                }
+                if (riderAnswer) script += riderAnswer.value + "\n";
             }
 
             if (document.querySelector('input[value="Merchant Answer"]').checked) {
-            let merchantAnswer = document.querySelector('input[name="merchantAnswer"]:checked');
-            if (merchantAnswer) {
-            script += merchantAnswer.value + "\n";
-                }
-           }
-
-            if (document.querySelector('input[value="Rider didn\'t answer"]').checked) {
-                script += "Rider didn't answer\n";
+                let merchantAnswer = document.querySelector('input[name="merchantAnswer"]:checked');
+                if (merchantAnswer) script += merchantAnswer.value + "\n";
             }
 
-            if (document.querySelector('input[value="Merchant didn\'t answer"]').checked) { 
-                script += "Merchant didn't answer\n";
-            }
+            if (document.querySelector('input[value="Rider didn\'t answer"]').checked) script += "Rider didn't answer\n";
+            if (document.querySelector('input[value="Merchant didn\'t answer"]').checked) script += "Merchant didn't answer\n";
+            if (document.querySelector('input[value="Call CST on /  , to inform current situation"]').checked) script += "Call CST on /  , to inform current situation\n";
+            if (document.querySelector('input[value="CST Answer and inform him"]').checked) script += "CST Answer and inform him\n";
+            if (document.querySelector('input[value="CST No Answer"]').checked) script += "CST No Answer\n";
 
-            if (document.querySelector('input[value="Call CST on /  , to inform current situation"]').checked) {
-                script += "Call CST on /  , to inform current situation\n";
-            }
-
-            if (document.querySelector('input[value="CST Answer and inform him"]').checked) {
-                script += "CST Answer and inform him\n";
-            }
-
-            if (document.querySelector('input[value="CST No Answer"]').checked) {
-                script += "CST No Answer\n";
-            }
-
-            if (document.querySelector('input[value="Result / Cancel Order Full Refund to Keeta Wallet and Compensate 50 QAR to wallet"]').checked) {
-                script += "Result / Cancel Order Full Refund to Keeta Wallet and Compensate 50 QAR to wallet\n";
+            // إضافة منطق الـ Result الجديد
+            if (document.querySelector('input[value="Result"]').checked) {
+                let resultOption = document.querySelector('input[name="resultOption"]:checked');
+                if (resultOption) script += resultOption.value + "\n";
             }
 
             output.value = script;
@@ -308,26 +281,13 @@
             let output = document.getElementById("output");
             output.select();
             document.execCommand("copy");
-            alert("Script copied to clipboard!");
+            alert("Template copied ✅");
         }
 
         function resetSelections() {
-            // إلغاء تحديد كل الـ checkboxes
-            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
-                checkbox.checked = false;
-            });
-
-            // إلغاء تحديد كل الـ radio buttons
-            document.querySelectorAll('input[type="radio"]').forEach(radio => {
-                radio.checked = false;
-            });
-
-            // إخفاء كل الأقسام الفرعية
-            document.querySelectorAll('.sub-options').forEach(subOptions => {
-                subOptions.style.display = 'none';
-            });
-
-            // مسح محتوى الـ textarea
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => checkbox.checked = false);
+            document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
+            document.querySelectorAll('.sub-options').forEach(subOptions => subOptions.style.display = 'none');
             document.getElementById("output").value = "";
         }
     </script>
@@ -336,5 +296,3 @@
   </section>
 </body>
 </html>
-
-
