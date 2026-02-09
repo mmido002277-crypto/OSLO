@@ -166,11 +166,6 @@
         </label><br>
         
         <label>
-            <input type="checkbox" value="Called Merchant On">
-            <i class="icon fas fa-phone-volume"></i> Called Merchant On
-        </label><br>
-        
-        <label>
             <input type="checkbox" value="Rider Answer" onclick="toggleSubOptions('riderAnswerOptions', this)">
             <i class="icon fas fa-headset"></i> Rider Answer
         </label><br>
@@ -181,7 +176,15 @@
                 <i class="icon fas fa-ban"></i> Rider Answer said He Can't Deliver the Order Because</label><br>
         </div>
         
+        <label><input type="checkbox" value="Rider didn't answer">
+            <i class="icon fas fa-phone-slash"></i> Rider didn't answer
+        </label><br>
         <label>
+            <input type="checkbox" value="Called Merchant On">
+            <i class="icon fas fa-phone-volume"></i> Called Merchant On
+        </label><br>
+        
+            <label>
             <input type="checkbox" value="Merchant Answer" onclick="toggleSubOptions('merchantAnswerOptions', this)">
             <i class="icon fas fa-headset"></i> Merchant Answer
         </label><br>
@@ -192,9 +195,6 @@
                 <i class="icon fas fa-times-circle"></i> Merchant Answer said He Can't prepare the Order</label><br>
         </div>
 
-        <label><input type="checkbox" value="Rider didn't answer">
-            <i class="icon fas fa-phone-slash"></i> Rider didn't answer
-        </label><br>
         <label><input type="checkbox" value="Merchant didn't answer">
             <i class="icon fas fa-phone-slash"></i> Merchant didn't answer
         </label><br>
@@ -250,19 +250,22 @@
             }
             
             if (document.querySelector('input[value="Called Current Rider On"]').checked) script += "Called Current Rider On\n";
-            if (document.querySelector('input[value="Called Merchant On"]').checked) script += "Called Merchant On\n";
-
             if (document.querySelector('input[value="Rider Answer"]').checked) {
-                let riderAnswer = document.querySelector('input[name="riderAnswer"]:checked');
-                if (riderAnswer) script += riderAnswer.value + "\n";
+                    let riderAnswer = document.querySelector('input[name="riderAnswer"]:checked');
+            if (riderAnswer) script += riderAnswer.value + "\n";
+            } // 2. غلق القوس هنا فوراً ليفصل بينه وبين الخيارات التالية
+
+            if (document.querySelector('input[value="Rider didn\'t answer"]').checked) {
+                script += "Rider didn't answer\n";
             }
 
+            if (document.querySelector('input[value="Called Merchant On"]').checked) {
+                       script += "Called Merchant On\n";
+             }
             if (document.querySelector('input[value="Merchant Answer"]').checked) {
                 let merchantAnswer = document.querySelector('input[name="merchantAnswer"]:checked');
                 if (merchantAnswer) script += merchantAnswer.value + "\n";
             }
-
-            if (document.querySelector('input[value="Rider didn\'t answer"]').checked) script += "Rider didn't answer\n";
             if (document.querySelector('input[value="Merchant didn\'t answer"]').checked) script += "Merchant didn't answer\n";
             if (document.querySelector('input[value="Call CST on /  , to inform current situation"]').checked) script += "Call CST on /  , to inform current situation\n";
             if (document.querySelector('input[value="CST Answer and inform him the current situation"]').checked) script += "CST Answer and inform him the current situation\n";
@@ -296,3 +299,5 @@
   </section>
 </body>
 </html>
+
+
